@@ -1,0 +1,114 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage[top=3cm,left=4cm,right=4cm]{geometry}
+\usepackage{hyperref}
+
+% Language selection
+\newif\ifenglish
+\newif\ifczech
+% Uncomment the desired language
+% \englishtrue
+\czechtrue
+
+\pagenumbering{gobble}
+
+\hypersetup{colorlinks=false}
+    
+\begin{document}
+
+\begin{center}
+    \ifenglish
+        \huge{\textbf{Curriculum Vitae}}
+    \fi
+    \ifczech
+        \huge{\textbf{Životopis}}
+    \fi
+    \par\noindent\rule{\textwidth}{0.4pt}
+\end{center}
+
+\subsection*{\ifenglish Contacts \fi \ifczech Kontakty \fi}
+\begin{tabular}{>{\bfseries}l l}
+    \ifenglish Name: \fi \ifczech Jméno: \fi
+            & Bc. Josef Dostál \\
+    \ifenglish Phone number: \fi \ifczech Telefon: \fi
+            & +420 739 136 655 \\
+    E-mail:          
+            & josefdostal@hotmail.com \\
+    LinkedIn:        
+            & \href {https://www.linkedin.com/in/josef-dostal/}
+                             {linkedin.com/in/josef-dostal/} \\
+    \ifenglish Address: \fi \ifczech Adresa: \fi         
+            & Hlavní třída 893/10 \\
+            & Ostrava - Poruba \\
+            & 708 00
+\end{tabular}
+
+\subsection*{\ifenglish Education \fi \ifczech Vzdělání \fi}
+\begin{tabular}{>{\bfseries}l l}
+    2009 - 2015: 
+            & \ifenglish Gymnasium of Petr Bezruč - Frýdek-Místek \fi \ifczech Gymnázium Petra Bezruče - Frýdek-Místek \fi \\
+            & \ifenglish General gymnasium finished by maturity exam \fi \ifczech Všeobecné gymnázium zakončené maturitní zkouškou \fi \\
+    2017 - 2020: 
+            & \ifenglish VSB - Technical university of Ostrava \fi \ifczech VŠB - Technická univerzita Ostrava \fi \\
+            & \ifenglish Faculty of electrical engineering and computer science \fi \ifczech Fakulta elektrotechniky a informatiky \fi \\
+            & \ifenglish Major: Informatics and computer science \fi \ifczech Obor: Informatika a výpočetní technika \fi \\
+\end{tabular}
+
+\subsection*{\ifenglish Experience \fi \ifczech Zkušenosti \fi}
+\begin{tabular}{>{\bfseries}l l}
+    2018 - 2020: 
+                & Tieto Czech s.r.o \\
+                & \ifenglish Supporting work in administration, later server automation \fi \ifczech Podpůrná práce v administraci, později automatizace serverů \fi \\
+    2020 - 2021: 
+                & CertiCon a.s. \\
+                & \ifenglish Software engineer junior \fi \ifczech Juniorní softwarový inženýr \fi \\
+                & \ifenglish Development of an information system for a customer in the health sector \fi \ifczech Vývoj informačního systému pro zákazníka v oblasti zdravotnictví \fi \\
+                & \ifenglish Implementation in .NET FW/Core \fi \ifczech Implementace v .NET FW/Core \fi \\
+    2021 - 2023:
+                & Ness Czech s.r.o. \\
+                & \ifenglish Software engineer \fi \ifczech Softwarový inženýr \fi \\
+                & \ifenglish Proprietary software and deployment solutions for a customer in telecommunications \fi \ifczech Proprietární software a deployment řešení pro zákazníka v telekomunikacích \fi \\
+                & \ifenglish Implementation in .NET 6, T-SQL \fi \ifczech Implementace v .NET 6, T-SQL \fi \\
+                & \ifenglish Deployment in PodMan running on RHEL 8 \fi \ifczech Deployment v PodManu běžícím na RHEL 8 \fi \\
+    2023 - 2025:
+                & Malfini a.s. \\
+                & Software Developer Backend \\
+                & \ifenglish Development of proprietary logistics information systems \fi \ifczech Vývoj proprietárních logistických informačních systémů \fi \\
+    2025 - \ifenglish now: \fi \ifczech nyní: \fi
+                & Malfini a.s. \\
+                & Team Leader \& Software Developer Backend \\
+                & \ifenglish Leading SW Development team while maintaining hands-on status \fi
+                \ifczech Vedení SW Development týmu při zachování hands-on statusu \fi \\
+                & \ifenglish Cooperation with product manager on discovery \fi
+                \ifczech Spolupráce s produktovým managerem na discovery \fi \\
+                & \ifenglish Proposals of architectural changes for company expasion \fi
+                \ifczech Návrhy na úpravy architektury pro expanzi firmy \fi
+\end{tabular}
+
+\subsection*{
+    \ifenglish Programming/Scripting languages \fi
+    \ifczech Programovací a skriptovací jazyky \fi}
+C\#, T-SQL, PowerShell, Bash, TypeScript (\ifenglish beginner\fi \ifczech začátečník\fi)
+
+\subsection*{
+    \ifenglish Frameworks and other technologies \fi 
+    \ifczech Frameworky a další technologie \fi}
+ASP.NET, Entity framework, LINQ, MS SQL Server, Docker/PodMan, Kubernetes, Azure DevOps, git, RabbitMQ, xUnit
+
+\subsection*{
+    \ifenglish Languages \fi 
+    \ifczech Jazykové znalosti \fi}
+\begin{tabular}{>{\bfseries}l l}
+    \ifenglish Czech: Native speaker \fi \ifczech Čeština: Rodilý mluvčí \fi \\
+    \ifenglish English: Fluent in speech and writing \fi \ifczech Angličtina: Slovem i písmem \fi
+\end{tabular}
+
+\subsection*{
+    \ifenglish Other information \fi 
+    \ifczech Další informace \fi}
+\begin{tabular}{>{\bfseries}l l}
+    \ifenglish Driving licence: B/B1 \fi \ifczech Řidičský průkaz: B/B1 \fi
+\end{tabular}
+
+\end{document}
