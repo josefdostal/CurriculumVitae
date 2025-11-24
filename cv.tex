@@ -3,59 +3,142 @@
 \usepackage{array}
 \usepackage[top=3cm,left=4cm,right=4cm]{geometry}
 \usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\setlength\parindent{0pt}
+
+\newcommand{\experience}[4]{
+    \begin{large}
+    \begin{bfseries}
+    #1
+    \end{bfseries}
+    \end{large}
+
+    \begin{large}
+        \begin{bfseries}
+        \noindent #2
+        \end{bfseries}
+        \hfill #3 
+    \end{large}
+
+    \begin{adjustwidth}{1em}{0pt}
+    #4
+    \end{adjustwidth}
+    \vspace{2em}
+}
+
+\newcommand{\education}[3]{
+    \begin{large}
+        \begin{bfseries}
+        #1
+        \end{bfseries}
+        \hfill #2 
+    \end{large}
+    
+    \begin{adjustwidth}{1em}{0pt}
+    #3
+    \end{adjustwidth}
+}
 
 % Language selection
 \newif\ifenglish
 \newif\ifczech
 % Uncomment the desired language
-\englishtrue
-% \czechtrue
+% \englishtrue
+\czechtrue
 
 \pagenumbering{gobble}
 
 \hypersetup{colorlinks=false}
+\title{Bc. Josef Dostál}
     
 \begin{document}
 
 \begin{center}
-    \ifenglish
-        \huge{\textbf{Curriculum Vitae}}
-    \fi
-    \ifczech
-        \huge{\textbf{Životopis}}
-    \fi
-    \par\noindent\rule{\textwidth}{0.4pt}
+    \huge{\textbf{Bc. Josef Dostál}} \\[10pt]
+    \Large{Software Developer}
 \end{center}
 
-\subsection*{\ifenglish Contacts \fi \ifczech Kontakty \fi}
-\begin{tabular}{>{\bfseries}l l}
-    \ifenglish Name: \fi \ifczech Jméno: \fi
-            & Bc. Josef Dostál \\
-    \ifenglish Phone number: \fi \ifczech Telefon: \fi
-            & +420 739 136 655 \\
-    E-mail:          
-            & josefdostal@hotmail.com \\
-    LinkedIn:        
-            & \href {https://www.linkedin.com/in/josef-dostal/}
-                             {linkedin.com/in/josef-dostal/} \\
-    \ifenglish Address: \fi \ifczech Adresa: \fi         
-            & Hlavní třída 893/10 \\
-            & Ostrava - Poruba \\
-            & 708 00
-\end{tabular}
+\begin{center}
+\faIcon*{phone}\ +420 739 136 655
+\ \faIcon{at}\ josefdostal@hotmail.com
+\ \faIcon{linkedin}\ \href {https://www.linkedin.com/in/josef-dostal/}{linkedin.com/in/josef-dostal/}
 
-\subsection*{\ifenglish Education \fi \ifczech Vzdělání \fi}
-\begin{tabular}{>{\bfseries}l l}
-    2009 - 2015: 
-            & \ifenglish Gymnasium of Petr Bezruč - Frýdek-Místek \fi \ifczech Gymnázium Petra Bezruče - Frýdek-Místek \fi \\
-            & \ifenglish General gymnasium finished by maturity exam \fi \ifczech Všeobecné gymnázium zakončené maturitní zkouškou \fi \\
-    2017 - 2020: 
-            & \ifenglish VSB - Technical university of Ostrava \fi \ifczech VŠB - Technická univerzita Ostrava \fi \\
-            & \ifenglish Faculty of electrical engineering and computer science \fi \ifczech Fakulta elektrotechniky a informatiky \fi \\
-            & \ifenglish Major: Informatics and computer science \fi \ifczech Obor: Informatika a výpočetní technika \fi \\
-\end{tabular}
+\faIcon{home}
+Hlavní třída 893/10,
+Ostrava - Poruba,
+708 00,
+\ifenglish Czech Republic\fi \ifczech Česká Republika\fi
+\end{center}
 
-\subsection*{\ifenglish Experience \fi \ifczech Zkušenosti \fi}
+\par\noindent\rule{\textwidth}{0.4pt}
+
+\section*{
+    \ifenglish Education\fi
+    \ifczech Vzdělání\fi}
+\education{
+    \ifenglish VSB - Technical university of Ostrava\fi
+    \ifczech VŠB - Technická univerzita Ostrava \fi}
+    {2017 -- 2020}{
+        \ifenglish Faculty of electrical engineering and computer science\fi 
+        \ifczech Fakulta elektrotechniky a informatiky\fi
+        
+        \ifenglish Major: Informatics and computer science\fi
+        \ifczech Obor: Informatika a výpočetní technika\fi 
+}
+
+\section*{
+    \ifenglish Profile\fi
+    \ifczech Profil\fi}
+
+TODO
+
+\section*{
+    \ifenglish Work Experience\fi
+    \ifczech Pracovní zkušenosti\fi}
+
+\experience{Dev Lead}{Malfini a.s.}{2025}{
+    Agile environment, UML, design patterns, 
+}
+
+\experience{Software Developer Backend}{Malfini a.s.}{2023 -- 2025}{
+    C\#, design patterns, RabbitMQ
+}
+
+\experience{Software Engineer}{Ness Czech s.r.o}{2021 -- 2023}{
+    C\#, REST API, T-SQL, Kubernetes, Podman
+}
+    
+\experience{Junior Software Engineer}{CertiCon a.s.}{2020 -- 2021}{
+    \ifenglish Our team implemented and maintained IS solution for Medtronic company\fi
+    \ifczech Náš tým implementoval a udržoval informační systém pro zákazníka z odvětví zdravotnictví\fi
+
+    \ifenglish Refactor of parts of an old and unscalable project into microservices\fi
+    \ifczech Refactor částí staré a neškálovatelné aplikace do mikroservis\fi
+
+    \ifenglish Adding unit tests to the original solution\fi
+    \ifczech Doplňování unit testů do původního projektu\fi
+
+    C\#, ASP.NET, EntityFramework, Unit testing, Azure, Kubernetes
+}
+
+\experience{\ifenglish Part-time worker\fi\ifczech Brigádník\fi}{Tieto s.r.o}{2018 -- 2020}{
+    \ifenglish Supporting work in administration and resource monitoring\fi
+    \ifczech Podpůrné práce v administrativě a monitoringu zdrojů\fi
+
+    \ifenglish Later, automation of server maintenance\fi
+    \ifczech Později, automatizace správy serverů\fi
+
+    \ifenglish Bash, PowerShell, Linux, Atlassian ecosystem\fi
+    \ifczech Bash, PowerShell, Linux, Atlassian ekosystém\fi
+}
+
+\\
+    \par\noindent\rule{\textwidth}{0.4pt}
+\\
+
 \begin{tabular}{>{\bfseries}l l}
     2018 - 2020: 
                 & Tieto Czech s.r.o \\
