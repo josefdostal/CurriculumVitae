@@ -3,112 +3,253 @@
 \usepackage{array}
 \usepackage[top=3cm,left=4cm,right=4cm]{geometry}
 \usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{pifont}
+\usepackage{fontawesome5}
+\usepackage[none]{hyphenat}
+\usepackage{titlesec} 
+\usepackage{enumitem}
+
+\setlist[itemize]{noitemsep, topsep=0, label=\small\textbullet}
+
+\setlength\parindent{0pt}
+
+\newcommand{\experience}[4]{
+    \begin{minipage}{\linewidth}
+    \begin{large}
+    \begin{bfseries}
+    #1
+    \end{bfseries}
+    \end{large}
+
+    \begin{large}
+        \begin{bfseries}
+        \noindent #2
+        \end{bfseries}
+        \hfill #3 
+    \end{large}
+
+    \begin{itemize}
+    #4
+    \end{itemize}
+    \end{minipage}
+    \vspace{\mypadding}
+}
+
+\newcommand{\education}[4]{
+    \begin{minipage}{\linewidth}
+    \begin{large}
+    \begin{bfseries}
+    #1
+    \end{bfseries}
+    \end{large}
+
+    \begin{large}
+        \begin{bfseries}
+        \noindent #2
+        \end{bfseries}
+        \hfill #3 
+    \end{large}
+
+    \begin{adjustwidth}{1em}{0pt}
+    #4
+    \end{adjustwidth}
+    \end{minipage}
+    \vspace{\mypadding}
+}
+
+\newlength{\mypadding}
+\setlength{\mypadding}{2em}
+
+\titlespacing*{\section}{0pt}{2em}{1em}
 
 % Language selection
 \newif\ifenglish
 \newif\ifczech
 % Uncomment the desired language
 \englishtrue
-% \czechtrue
+%\czechtrue
 
 \pagenumbering{gobble}
 
 \hypersetup{colorlinks=false}
+\title{Bc. Josef Dostál}
     
 \begin{document}
 
 \begin{center}
-    \ifenglish
-        \huge{\textbf{Curriculum Vitae}}
-    \fi
-    \ifczech
-        \huge{\textbf{Životopis}}
-    \fi
-    \par\noindent\rule{\textwidth}{0.4pt}
+    \huge{\textbf{Bc. Josef Dostál}} \\[10pt]
+    \Large{Software Developer}
 \end{center}
 
-\subsection*{\ifenglish Contacts \fi \ifczech Kontakty \fi}
-\begin{tabular}{>{\bfseries}l l}
-    \ifenglish Name: \fi \ifczech Jméno: \fi
-            & Bc. Josef Dostál \\
-    \ifenglish Phone number: \fi \ifczech Telefon: \fi
-            & +420 739 136 655 \\
-    E-mail:          
-            & josefdostal@hotmail.com \\
-    LinkedIn:        
-            & \href {https://www.linkedin.com/in/josef-dostal/}
-                             {linkedin.com/in/josef-dostal/} \\
-    \ifenglish Address: \fi \ifczech Adresa: \fi         
-            & Hlavní třída 893/10 \\
-            & Ostrava - Poruba \\
-            & 708 00
-\end{tabular}
+\begin{center}
+\faIcon*{phone}\ +420 739 136 655
+\ \faIcon{at}\ josefdostal@hotmail.com
+\ \faIcon{linkedin}\ \href{https://www.linkedin.com/in/josef-dostal/}{linkedin.com/in/josef-dostal/}
 
-\subsection*{\ifenglish Education \fi \ifczech Vzdělání \fi}
-\begin{tabular}{>{\bfseries}l l}
-    2009 - 2015: 
-            & \ifenglish Gymnasium of Petr Bezruč - Frýdek-Místek \fi \ifczech Gymnázium Petra Bezruče - Frýdek-Místek \fi \\
-            & \ifenglish General gymnasium finished by maturity exam \fi \ifczech Všeobecné gymnázium zakončené maturitní zkouškou \fi \\
-    2017 - 2020: 
-            & \ifenglish VSB - Technical university of Ostrava \fi \ifczech VŠB - Technická univerzita Ostrava \fi \\
-            & \ifenglish Faculty of electrical engineering and computer science \fi \ifczech Fakulta elektrotechniky a informatiky \fi \\
-            & \ifenglish Major: Informatics and computer science \fi \ifczech Obor: Informatika a výpočetní technika \fi \\
-\end{tabular}
+\faIcon{home}
+Hlavní třída 893/10,
+Ostrava - Poruba,
+708 00,
+\ifenglish Czech Republic\fi \ifczech Česká Republika\fi
+\end{center}
 
-\subsection*{\ifenglish Experience \fi \ifczech Zkušenosti \fi}
-\begin{tabular}{>{\bfseries}l l}
-    2018 - 2020: 
-                & Tieto Czech s.r.o \\
-                & \ifenglish Supporting work in administration, later server automation \fi \ifczech Podpůrná práce v administraci, později automatizace serverů \fi \\
-    2020 - 2021: 
-                & CertiCon a.s. \\
-                & \ifenglish Software engineer junior \fi \ifczech Juniorní softwarový inženýr \fi \\
-                & \ifenglish Development of an information system for a customer in the health sector \fi \ifczech Vývoj informačního systému pro zákazníka v oblasti zdravotnictví \fi \\
-                & \ifenglish Implementation in .NET FW/Core \fi \ifczech Implementace v .NET FW/Core \fi \\
-    2021 - 2023:
-                & Ness Czech s.r.o. \\
-                & \ifenglish Software engineer \fi \ifczech Softwarový inženýr \fi \\
-                & \ifenglish Proprietary software and deployment solutions for a customer in telecommunications \fi \ifczech Proprietární software a deployment řešení pro zákazníka v telekomunikacích \fi \\
-                & \ifenglish Implementation in .NET 6, T-SQL \fi \ifczech Implementace v .NET 6, T-SQL \fi \\
-                & \ifenglish Deployment in PodMan running on RHEL 8 \fi \ifczech Deployment v PodManu běžícím na RHEL 8 \fi \\
-    2023 - 2025:
-                & Malfini a.s. \\
-                & Software Developer Backend \\
-                & \ifenglish Development of proprietary logistics information systems \fi \ifczech Vývoj proprietárních logistických informačních systémů \fi \\
-    2025 - \ifenglish now: \fi \ifczech nyní: \fi
-                & Malfini a.s. \\
-                & Team Leader \& Software Developer Backend \\
-                & \ifenglish Leading SW Development team while maintaining hands-on status \fi
-                \ifczech Vedení SW Development týmu při zachování hands-on statusu \fi \\
-                & \ifenglish Cooperation with product manager on discovery \fi
-                \ifczech Spolupráce s produktovým managerem na discovery \fi \\
-                & \ifenglish Proposals of architectural changes for company expasion \fi
-                \ifczech Návrhy na úpravy architektury pro expanzi firmy \fi
-\end{tabular}
+\par\noindent\rule{\textwidth}{0.4pt}
 
-\subsection*{
-    \ifenglish Programming/Scripting languages \fi
-    \ifczech Programovací a skriptovací jazyky \fi}
-C\#, T-SQL, PowerShell, Bash, TypeScript (\ifenglish beginner\fi \ifczech začátečník\fi)
+\vspace{-1em}
 
-\subsection*{
-    \ifenglish Frameworks and other technologies \fi 
-    \ifczech Frameworky a další technologie \fi}
-ASP.NET, Entity framework, LINQ, MS SQL Server, Docker/PodMan, Kubernetes, Azure DevOps, git, RabbitMQ, xUnit
+\section*{
+    \ifenglish Profile\fi
+    \ifczech Profil\fi}
 
-\subsection*{
-    \ifenglish Languages \fi 
-    \ifczech Jazykové znalosti \fi}
-\begin{tabular}{>{\bfseries}l l}
-    \ifenglish Czech: Native speaker \fi \ifczech Čeština: Rodilý mluvčí \fi \\
-    \ifenglish English: Fluent in speech and writing \fi \ifczech Angličtina: Slovem i písmem \fi
-\end{tabular}
+\ifenglish
+Backend-focused Software Developer with 5+ years of experience building
+and maintaining .NET applications in logistics, telecom and healthcare domains.
 
-\subsection*{
-    \ifenglish Other information \fi 
-    \ifczech Další informace \fi}
-\begin{tabular}{>{\bfseries}l l}
-    \ifenglish Driving licence: B/B1 \fi \ifczech Řidičský průkaz: B/B1 \fi
-\end{tabular}
+Strong in C\#, ASP.NET and relational databases.
+
+Comfortable collaborating across teams, guiding others technically,
+and contributing to architectural decisions.
+
+Keen to grow further into software architecture
+and technical leadership roles.
+\fi
+\ifczech
+Software Developer s 5+ lety zkušeností s backend vývojem, většinou týkající se .NET a Microsoft technologií.
+
+Schopen jasné komunikace v rámci i mimo týmy a usnadňovat plynulou spolupráci.
+
+Nadšený ohledně nových technologií týkajících se softwarového vývoje, a jako takový bych se v budoucnu chtěl věnovat roli týkající se softwarové architektury.
+\fi
+
+\section*{
+    \ifenglish Education\fi
+    \ifczech Vzdělání\fi}
+\education{\ifenglish Bachelor degree\fi \ifczech Bakalář\fi}{\ifenglish VSB - Technical university of Ostrava\fi \ifczech VŠB - Technická univerzita Ostrava \fi}{2017 -- 2020}{
+        \ifenglish Faculty of electrical engineering and computer science\fi 
+        \ifczech Fakulta elektrotechniky a informatiky\fi
+        
+        \ifenglish Major: Informatics and computer science\fi
+        \ifczech Obor: Informatika a výpočetní technika\fi 
+}
+
+\vspace{-\mypadding}
+
+\section*{
+    \ifenglish Work Experience\fi
+    \ifczech Pracovní zkušenosti\fi}
+
+\experience{Dev Lead}{Malfini a.s.}{3/2025 -- 11/2025}{
+\item
+    \ifenglish Responsible for team's delivery.\fi
+    \ifczech Zodpovědnost za dodávky týmu.\fi
+    
+\item
+    \ifenglish Guidance of team of 4 developers on technical and leadership level while remaining hands-on.\fi
+    \ifczech Vedení týmu o 4 vývojářích na technické i vedoucí úrovni za aktivního zapojení do vývoje.\fi
+
+\item
+    \ifenglish Sprint planning, participation in discovery sessions and reporting team's activities to management.\fi
+    \ifczech Plánování sprintů, podílení se na discovery části vývoje a reportování aktivit týmu managementu.\fi
+
+\item
+    \ifenglish Guided team through agile transformation.\fi
+    \ifczech Vedení týmu v průběhu agilní transformace.\fi
+}
+
+\experience{Software Developer Backend}{Malfini a.s.}{9/2023 -- \ifenglish present\fi \ifczech současnost\fi}{
+\item
+    \ifenglish Developed and maintained proprietary applications supporting logistics center.\fi
+    \ifczech Vývoj a udržování proprietárních aplikací na podporu logistického centra.\fi
+
+\item
+    \ifenglish Designed and implemented new solutions from scratch, following established design patterns and best practices.\fi
+    \ifczech Návrh a implementace nových řešení od samotného počátku, za použití ověřených postupů a návrhových vzorů.\fi
+
+\item
+    \ifenglish Refactored existing codebases to improve readability, reliability and maintainability.\fi
+    \ifczech Refaktor stávajících služeb za účelem zlepšení čitelnosti, spolehlivosti a udržitelnosti.\fi
+
+\item
+    \ifenglish Contributed to architectural decisions to make critical applications scalable to multiple warehouses.\fi 
+    \ifczech Aktivní podílení se na architektonických úpravách na provoz kritických aplikací na více skladech.\fi
+    
+\item
+    Tech stack: C\#, ASP.NET, EntityFramework, T-SQL, MongoDB, Azure DevOps, UML, design~patterns, RabbitMQ
+}
+
+\experience{Software Engineer}{Ness Czech s.r.o}{9/2021 -- 8/2023}{
+\item
+    \ifenglish Developed a REST API for Vodafone a.s., including desing and implementation.\fi
+    \ifczech Vývoj REST API pro Vodafone a.s., včetně návrhu a implementace.\fi
+
+\item
+    \ifenglish Designed and managed deployment pipeline, ensuring reliable releases.\fi
+    \ifczech Návrh a správa deployment pipeline pro zajištění spolehlivého nasazení.\fi
+
+\item
+    \ifenglish Implemented a database-oriented application with emphasis on performance and data integrity.\fi
+    \ifczech Implementace databázově orientované aplikace s důrazem na výkon a datovou integritu.\fi
+
+\item
+    Tech stack: C\#, REST API, T-SQL, Kubernetes, Podman
+}
+    
+\experience{Junior Software Engineer}{CertiCon a.s.}{2/2020 -- 8/2021}{
+\item
+    \ifenglish Implemented and maintained information system solution for a Medtronic company.\fi
+    \ifczech Náš tým implementoval a udržoval informační systém pro společnost Medtronik.\fi
+
+\item
+    \ifenglish Refactored parts of an old and unscalable project into microservices.\fi
+    \ifczech Refactor částí staré a neškálovatelné aplikace do mikroservis.\fi
+
+\item
+    \ifenglish Added unit tests to the existing solution to improve reliability.\fi
+    \ifczech Doplňování unit testů do původního projektu za účelem zvýšení spolehlivosti.\fi
+
+\item
+    Tech stack: C\#, ASP.NET, EntityFramework, Unit testing, Azure, Kubernetes, Git
+}
+
+\experience{\ifenglish Part-time worker\fi\ifczech Brigádník\fi}{Tieto s.r.o}{8/2018 -- 1/2020}{
+\item
+    \ifenglish Supporting work in administration and resource monitoring.\fi
+    \ifczech Podpůrné práce v administrativě a monitoringu zdrojů.\fi
+
+\item
+    \ifenglish Later, automation of server maintenance.\fi
+    \ifczech Později, automatizace správy serverů.\fi
+
+\item
+    Tech stack: 
+    \ifenglish Bash, PowerShell, Linux, Atlassian ecosystem.\fi
+    \ifczech Bash, PowerShell, Linux, Atlassian ekosystém.\fi
+}
+
+\vspace{-\mypadding}
+
+\section*{
+    \ifenglish Languages\fi 
+    \ifczech Jazykové znalosti\fi}
+    
+\ifenglish \textbf{Czech}: Native speaker\fi 
+\ifczech \textbf{Čeština}: Rodilý mluvčí\fi
+
+\ifenglish \textbf{English}: Fluent in speech and writing\fi
+\ifczech \textbf{Angličtina}: Slovem i písmem\fi
+
+\section*{
+\ifenglish Reference contact\fi
+\ifczech Referenční kontakt\fi}
+
+\textbf{Petr Bechyně}
+
+\ifenglish Former Agile Transformation Manager at Malfini a.s.\fi
+\ifczech Bývalý Agile Transformation Manager v Malfini a.s.\fi
+
+\faIcon*{phone}\ +420 736 761 183
+
+\faIcon{at}\ mail@petrbechyne.com
 
 \end{document}
